@@ -1,0 +1,13 @@
+{
+    "name": "acer-n5/cafe-progate",
+    "authors": [
+        {
+            "name": "azhararrozak",
+            "email": "azhardrozak2001@upi.edu"
+        }
+    ],
+    "require": {},
+    "scripts": {
+        "server": "php -S localhost:8000 -t public"
+    }
+}
