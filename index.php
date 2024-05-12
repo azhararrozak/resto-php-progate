@@ -1,6 +1,4 @@
-<?php 
-require_once('data.php');
-?>
+<?php require_once('data.php') ?>
 
 <!DOCTYPE html>
 <html>
@@ -13,12 +11,25 @@ require_once('data.php');
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Café Progate</h1>
+    <form method="post" action="confirm.php">
     <div class="menu-items">
-      <!-- Ketik loop foreach -->
       <?php foreach ($menus as $menu): ?>
-     <h3><?php echo $menu->name ?></h3>
-     <?php endforeach ?>
+        <div class="menu-item">
+          <!-- Cetak property image milik $menu -->
+          <img src="<?php echo $menu->getImage() ?>">
+          <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+          <!-- Cetak property price milik $menu -->
+          <!-- price dapat diubah karena belum private -->
+          <?php // $menu->price = 0 ?>
+          
+          <p class="price">$<?php echo $menu->getTaxIncludedPrice() ?></p>
+          <span>Qty: </span>
+          <input type="text" value="0" name="<?php echo $menu->getName() ?>">
+        </div>
+      <?php endforeach ?>
     </div>
+    <input type="submit" value="Pesan">
+    </form>
   </div>
 </body>
 </html>
