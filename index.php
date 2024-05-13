@@ -1,4 +1,8 @@
-<?php require_once('data.php') ?>
+<?php 
+  require_once('data.php');
+  require_once('menu.php');
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +15,7 @@
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Café Progate</h1>
+    <h3>Jumlah item: <?php echo Menu::getCount() ?></h3>
     <form method="post" action="confirm.php">
     <div class="menu-items">
       <?php foreach ($menus as $menu): ?>
