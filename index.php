@@ -26,8 +26,10 @@
           <!-- Cetak property price milik $menu -->
           <!-- price dapat diubah karena belum private -->
           <?php // $menu->price = 0 ?>
-          
-          <p class="price">$<?php echo $menu->getTaxIncludedPrice() ?></p>
+          <?php if ($menu instanceof Drink):?>
+            <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+          <?php endif ?>
+            <p class="price">$<?php echo $menu->getTaxIncludedPrice() ?></p>
           <span>Qty: </span>
           <input type="text" value="0" name="<?php echo $menu->getName() ?>">
         </div>
