@@ -28,7 +28,11 @@
           <?php // $menu->price = 0 ?>
           <?php if ($menu instanceof Drink):?>
             <p class="menu-item-type"><?php echo $menu->getType() ?></p>
-          <?php endif ?>
+            <?php else: ?>
+              <?php for($i=0; $i < $menu->getSpiciness(); $i++): ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class="icon-spiciness">
+              <?php endfor ?>
+            <?php endif ?>
             <p class="price">$<?php echo $menu->getTaxIncludedPrice() ?></p>
           <span>Qty: </span>
           <input type="text" value="0" name="<?php echo $menu->getName() ?>">
